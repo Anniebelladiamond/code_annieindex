@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Annabel | Executive & Virtual Assistant, Lagos</title>
+<meta name="description" content="Annabel is an Executive and Virtual Assistant in Lagos, Nigeria, offering executive assistance, virtual support, administrative and operations management, and digital templates.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===== Design tokens: edit colours and fonts here ===== */
+:root{--cream:#f6f1e7;--white:#fffdf8;--ink:#2b2b2e;--muted:#5d5a55;--gold:#9a7b2f;--gold-l:#d9c18a;--navy:#17233a;--line:#e4dccb;--r:14px;
+--serif:'Fraunces',Georgia,serif;--sans:'Instrument Sans',system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;font:400 1rem/1.65 var(--sans);color:var(--ink);background:var(--white)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;margin:0 0 .6em}
+h1{font-size:clamp(2.2rem,5.5vw,4rem)}h2{font-size:clamp(1.7rem,3.5vw,2.5rem)}h3{font-size:1.25rem}
+p{margin:0 0 1em;max-width:68ch}a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.wrap{max-width:1120px;margin:auto;padding:0 20px}section{padding:84px 0}
+.alt{background:var(--cream)}.lead{color:var(--muted);font-size:1.1rem}
+.btn{display:inline-block;border:1.5px solid var(--navy);background:var(--navy);color:#fff;padding:.75em 1.4em;border-radius:99px;font:600 .95rem var(--sans);cursor:pointer;text-decoration:none;transition:.2s}
+.btn:hover{background:var(--gold);border-color:var(--gold)}.btn.ghost{background:transparent;color:var(--navy)}.btn.ghost:hover{background:var(--navy);color:#fff}
+.btn.sm{padding:.5em 1em;font-size:.85rem}.btn:disabled{opacity:.5;cursor:wait}
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(255,253,248,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;gap:20px;height:68px}
+.logo{font:600 1.2rem var(--serif);text-decoration:none;margin-right:auto}.logo span{color:var(--gold)}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+nav ul a{text-decoration:none;font-weight:500;color:var(--muted);padding:6px 0;border-bottom:2px solid transparent}
+nav ul a.on{color:var(--ink);border-color:var(--gold)}
+.icon-btn{background:none;border:1px solid var(--line);border-radius:99px;padding:.45em .9em;cursor:pointer;font:600 .9rem var(--sans)}
+#burger{display:none}
+@media(max-width:860px){#burger{display:block}nav ul{position:absolute;top:68px;left:0;right:0;flex-direction:column;background:var(--white);padding:14px 20px;border-bottom:1px solid var(--line);display:none}nav ul.open{display:flex}.hide-m{display:none}}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:96px 0 80px;background:var(--cream)}
+.hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+@media(max-width:860px){.hero .grid{grid-template-columns:1fr}}
+.kw{display:inline-block;min-width:6.5ch;color:var(--gold);transition:opacity .4s,transform .4s}.kw.out{opacity:0;transform:translateY(8px)}
+.hero h1,.hero .intro,.hero .lead,.hero .cta{animation:rise .9s both}.hero .intro{animation-delay:.1s}.hero .lead{animation-delay:.2s}.hero .cta{animation-delay:.3s}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+.shape{position:absolute;border:1.5px solid var(--gold-l);border-radius:50%;animation:float 9s ease-in-out infinite;pointer-events:none}
+@keyframes float{50%{transform:translateY(-18px)}}
+/* planner visual */
+.planner{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:0 18px 40px rgba(23,35,58,.1);position:relative}
+.planner h3{font-size:1rem;color:var(--muted);font-family:var(--sans)}
+.task{display:flex;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.task i{width:20px;height:20px;border:2px solid var(--gold-l);border-radius:6px;flex:none;position:relative}
+.task.done i{background:var(--gold);border-color:var(--gold)}.task.done i:after{content:"";position:absolute;left:5px;top:1px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.task.done span{text-decoration:line-through;color:var(--muted)}
+.task{opacity:0;animation:rise .6s forwards}.task:nth-of-type(1){animation-delay:.6s}.task:nth-of-type(2){animation-delay:.9s}.task:nth-of-type(3){animation-delay:1.2s}.task:nth-of-type(4){animation-delay:1.5s}
+/* reveal (one scroll effect for the whole page) */
+.rv{opacity:0;transform:translateY(20px);transition:.7s}.rv.in{opacity:1;transform:none}
+/* about */
+.two{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:start}@media(max-width:860px){.two{grid-template-columns:1fr}}
+.portrait{aspect-ratio:4/5;border-radius:var(--r);background:linear-gradient(160deg,var(--navy),#2c3e5f);display:grid;place-items:center;color:var(--gold-l);text-align:center;padding:20px;font-family:var(--serif)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0 0 1.5em}
+.chips li{border:1px solid var(--line);background:var(--cream);border-radius:99px;padding:.3em .9em;font-size:.88rem}
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:22px;margin-top:36px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;flex-direction:column}
+.card ul{padding-left:1.1em;margin:0 0 1.2em;color:var(--muted);font-size:.93rem;flex:1}.card .ic{font-size:1.6rem;color:var(--gold)}
+.card .btn{align-self:flex-start}
+.pimg{height:150px;border-radius:10px;background:linear-gradient(135deg,var(--cream),var(--gold-l));display:grid;place-items:center;font:600 1rem var(--serif);color:var(--navy);margin-bottom:14px;text-align:center;padding:10px}
+.price{font:600 1.2rem var(--serif);color:var(--gold)}.tag{font-size:.75rem;background:var(--navy);color:#fff;border-radius:99px;padding:.15em .7em;align-self:flex-start;margin-bottom:8px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.tools{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+input,select,textarea{width:100%;font:inherit;padding:.7em .85em;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+.tools input{max-width:320px}
+label{display:block;font-weight:500;font-size:.9rem;margin-bottom:4px}
+/* form */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:640px){.fgrid{grid-template-columns:1fr}}
+.full{grid-column:1/-1}.err{color:#a3261c;font-size:.82rem;min-height:1.1em;display:block}
+input[aria-invalid=true],select[aria-invalid=true],textarea[aria-invalid=true]{border-color:#a3261c}
+.status{padding:12px 16px;border-radius:10px;margin-top:14px;display:none}.status.ok{display:block;background:#e8f1e4}.status.bad{display:block;background:#f8e3df}
+.cbox{display:flex;gap:10px;align-items:flex-start}.cbox input{width:auto;margin-top:5px}
+.contact-list{list-style:none;padding:0}.contact-list li{margin-bottom:8px}
+.note{font-size:.85rem;color:var(--muted)}.ph{border:1.5px dashed var(--gold);border-radius:var(--r);padding:24px;background:var(--white)}
+/* modal + cart drawer */
+dialog{border:none;border-radius:var(--r);padding:28px;max-width:560px;width:92%;box-shadow:0 30px 80px rgba(0,0,0,.3)}
+dialog::backdrop{background:rgba(23,35,58,.55)}
+#cart{margin:0 0 0 auto;height:100vh;max-height:100vh;border-radius:0;max-width:420px}
+.ci{display:grid;grid-template-columns:1fr auto;gap:6px;padding:12px 0;border-bottom:1px solid var(--line)}
+.qty{display:flex;align-items:center;gap:8px}.qty button{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer}
+.link{background:none;border:none;color:var(--gold);cursor:pointer;text-decoration:underline;font:inherit;padding:0}
+/* footer */
+footer{background:var(--navy);color:#d8dbe3;padding:64px 0 28px}footer a{text-decoration:none;color:#d8dbe3}footer a:hover{color:var(--gold-l)}
+.fcols{display:grid;grid-template-columns:1.5fr repeat(4,1fr);gap:30px}@media(max-width:900px){.fcols{grid-template-columns:1fr 1fr}}
+footer h3{color:#fff;font:600 .95rem var(--sans);margin-bottom:.8em}footer ul{list-style:none;padding:0;margin:0;font-size:.92rem}footer li{margin-bottom:6px}
+.news{display:flex;gap:8px;margin:28px 0;flex-wrap:wrap}.news input{max-width:300px}.fbot{border-top:1px solid #34405a;padding-top:20px;font-size:.88rem}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv,.task{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a href="#home" style="position:absolute;left:-999px" onfocus="this.style.left='8px'" onblur="this.style.left='-999px'">Skip to content</a>
+<header><div class="wrap"><nav aria-label="Main">
+  <a class="logo" href="#home">Annabel<span> | EVA</span></a>
+  <ul id="menu">
+    <li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#services">Services</a></li>
+    <li><a href="#products">Products</a></li><li><a href="#testimonials">Testimonials</a></li><li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="btn sm hide-m" href="#contact">Work With Me</a>
+  <button class="icon-btn" id="cartBtn" aria-label="Open cart">Cart (<span id="count">0</span>)</button>
+  <button class="icon-btn" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu">Menu</button>
+</nav></div></header>
+
+<main>
+<section class="hero" id="home">
+  <div class="shape" style="width:220px;height:220px;right:-60px;top:40px"></div><div class="shape" style="width:90px;height:90px;left:44%;bottom:30px;animation-delay:2s"></div>
+  <div class="wrap grid"><div>
+    <h1>Your Vision. My Organization. Exceptional Results.</h1>
+    <p class="intro"><strong>Hi, I’m Annabel</strong> — an Executive and Virtual Assistant with experience supporting businesses across entertainment, real estate, and hospitality.</p>
+    <p class="lead">I help executives and growing businesses <span class="kw" id="kw">organize</span> their days. Reliable executive assistance, virtual support, and administrative and operational management turn everyday business demands into streamlined workflows.</p>
+    <div class="row cta"><a class="btn" href="#contact">Hire Me</a><a class="btn ghost" href="#services">Explore My Services</a></div>
+  </div>
+  <div class="planner" aria-hidden="true"><h3>This week, handled</h3>
+    <div class="task done"><i></i><span>Confirm Monday’s board meeting</span></div>
+    <div class="task done"><i></i><span>Sort inbox and flag priorities</span></div>
+    <div class="task"><i></i><span>Prepare travel itinerary</span></div>
+    <div class="task"><i></i><span>Send client follow-ups</span></div></div></div>
+</section>
+
+<section id="about"><div class="wrap two">
+  <div class="rv"><!-- Replace the div below with: <img src="annabel.jpg" alt="Portrait of Annabel"> -->
+    <div class="portrait" role="img" aria-label="Placeholder for Annabel's portrait">Portrait placeholder<br>(replace with your photo)</div></div>
+  <div class="rv"><h2>The Right Hand Behind Your Success.</h2>
+    <p>My name is Annabel, and I am an Executive and Virtual Assistant based in Lagos, Nigeria. I help executives, entrepreneurs, and businesses manage the administrative and operational responsibilities that keep their work moving forward.</p>
+    <p>My experience spans entertainment, real estate, and hospitality. Working across these environments has strengthened my ability to adapt, coordinate, communicate, and keep workflows organized.</p>
+    <p>Good support takes foresight, discretion, consistency, and attention to detail, and the ability to anticipate needs before they become challenges. Whether I am coordinating schedules, organizing documents, managing correspondence, supporting customers, or assisting with daily operations, I bring professionalism and accountability.</p>
+    <p>My goal is to be a dependable extension of the people and organizations I support, so they can work smarter and act with greater confidence.</p>
+    <ul class="chips" id="strengths"></ul>
+    <h3>My approach</h3>
+    <p><strong>Understand</strong> your priorities and how you like to work. <strong>Organize</strong> responsibilities into clear systems. <strong>Execute</strong> reliably and on time. <strong>Communicate</strong> progress so nothing is left guessing.</p>
+  </div></div></section>
+
+<section class="alt" id="services"><div class="wrap">
+  <h2 class="rv">Reliable Support. Seamless Operations. More Time for What Matters.</h2>
+  <div class="cards" id="serviceCards"></div>
+</div></section>
+
+<section id="products"><div class="wrap">
+  <h2 class="rv">Tools and Resources to Help You Work Smarter.</h2>
+  <p class="lead">Sample products with placeholder prices. Edit them in the <code>PRODUCTS</code> list in the script.</p>
+  <div class="tools"><input type="search" id="search" placeholder="Search products" aria-label="Search products">
+    <select id="cat" aria-label="Filter by category" style="max-width:240px"></select></div>
+  <div class="cards" id="productCards"></div>
+</div></section>
+
+<section class="alt" id="testimonials"><div class="wrap">
+  <h2>Experience and Client Feedback</h2>
+  <div class="cards">
+    <div class="ph"><span class="tag">Placeholder</span><h3>Client testimonial</h3><p>Add a real testimonial, with the client’s permission, here. No reviews have been invented.</p></div>
+    <div class="ph"><span class="tag">Placeholder</span><h3>Professional reference</h3><p>Add a verified recommendation or reference here.</p></div>
+    <div class="ph"><span class="tag">Editable</span><h3>Entertainment</h3><p>Add your role, dates, and responsibilities.</p></div>
+    <div class="ph"><span class="tag">Editable</span><h3>Real estate</h3><p>Add your role, dates, and responsibilities.</p></div>
+    <div class="ph"><span class="tag">Editable</span><h3>Hospitality</h3><p>Add your role, dates, and responsibilities.</p></div>
+  </div></div></section>
+
+<section id="contact"><div class="wrap two" style="grid-template-columns:1fr 1.5fr">
+  <div><h2>Have a Task in Mind? Let’s Talk.</h2>
+    <p>Whether you need dependable executive support, remote administrative assistance, or help organizing your business operations, share a few details and let’s explore how I can support you.</p>
+    <ul class="contact-list"><li><strong>Annabel</strong>, Lagos, Nigeria</li>
+      <li><a href="mailto:annabelladiamond8@gmail.com">annabelladiamond8@gmail.com</a></li>
+      <li><a href="tel:+2349116700644">09116700644</a></li></ul>
+    <div class="row"><a class="btn" id="wa" href="#" target="_blank" rel="noopener">WhatsApp</a><a class="btn ghost" href="mailto:annabelladiamond8@gmail.com">Email me</a></div>
+    <p class="note" style="margin-top:14px">Typical response time: <em>[edit, e.g. within one business day]</em>. Remote support is available to clients beyond Lagos.</p></div>
+  <form id="inquiry" novalidate aria-labelledby="ft"><h2 id="ft" style="font-size:1.6rem">Let’s Make Your Work Easier.</h2>
+    <div class="fgrid">
+      <div><label for="name">Full name *</label><input id="name" required autocomplete="name"><span class="err"></span></div>
+      <div><label for="email">Email address *</label><input id="email" type="email" required autocomplete="email"><span class="err"></span></div>
+      <div><label for="phone">Phone number *</label><input id="phone" type="tel" required autocomplete="tel"><span class="err"></span></div>
+      <div><label for="company">Company (optional)</label><input id="company"></div>
+      <div><label for="service">Service required *</label><select id="service" required></select><span class="err"></span></div>
+      <div><label for="engagement">Engagement type</label><select id="engagement"><option>One-time</option><option>Project-based</option><option>Ongoing support</option></select></div>
+      <div><label for="start">Preferred start date</label><input id="start" type="date"></div>
+      <div><label for="hours">Estimated hours (optional)</label><input id="hours" placeholder="e.g. 10 per week"></div>
+      <div><label for="budget">Budget range (optional)</label><input id="budget" placeholder="e.g. ₦100,000 – ₦200,000"></div>
+      <div><label for="method">Preferred contact method</label><select id="method"><option>Email</option><option>WhatsApp</option><option>Phone call</option></select></div>
+      <div class="full"><label for="msg">Project description *</label><textarea id="msg" rows="4" required></textarea><span class="err"></span></div>
+      <div class="full"><div class="cbox"><input type="checkbox" id="consent" required><label for="consent">I agree that my information may be used to respond to my inquiry. *</label></div><span class="err"></span></div>
+    </div>
+    <button class="btn" id="submitBtn" type="submit" style="margin-top:14px">Submit Inquiry</button>
+    <div class="status" id="status" role="status" aria-live="polite"></div>
+  </form></div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="fcols">
+    <div><h3>Annabel | Executive & Virtual Assistant</h3><p>Helping executives, entrepreneurs, and businesses stay organized, simplify operations, and achieve more through dependable administrative and virtual support.</p></div>
+    <div><h3>Quick Links</h3><ul><li><a href="#home">Home</a></li><li><a href="#about">About Me</a></li><li><a href="#services">Services</a></li><li><a href="#products">Digital Products</a></li><li><a href="#testimonials">Testimonials</a></li><li><a href="#contact">Contact</a></li></ul></div>
+    <div><h3>Services</h3><ul><li><a href="#services">Executive Assistance</a></li><li><a href="#services">Virtual Assistance</a></li><li><a href="#services">Administrative Management</a></li><li><a href="#services">Operations Support</a></li><li><a href="#services">Customer Service</a></li><li><a href="#services">Industry-Specific Support</a></li></ul></div>
+    <div><h3>Contact</h3><ul><li>Lagos, Nigeria</li><li><a href="mailto:annabelladiamond8@gmail.com">annabelladiamond8@gmail.com</a></li><li><a href="tel:+2349116700644">09116700644</a></li><li><a id="wa2" href="#" target="_blank" rel="noopener">WhatsApp</a></li></ul></div>
+    <div><h3>Client Resources</h3><ul><li><a href="#contact">Service Inquiry</a></li><li><a href="#products">Product Store</a></li><li><a href="#" data-note="FAQ page not written yet.">FAQ</a></li><li><a href="#" data-note="Add your Privacy Policy before launch.">Privacy Policy</a></li><li><a href="#" data-note="Add your Terms before launch.">Terms and Conditions</a></li></ul></div>
+  </div>
+  <form class="news" id="news" novalidate><label for="nemail" style="width:100%;color:#fff">Productivity tips and new-product updates</label>
+    <input id="nemail" type="email" placeholder="Your email" required><button class="btn" type="submit">Subscribe</button><span id="nstatus" role="status" style="width:100%;font-size:.88rem"></span></form>
+  <div class="fbot"><p style="margin:0 0 4px">© <span id="yr"></span> Annabel | Executive & Virtual Assistant. All rights reserved.</p><p style="margin:0">Organized systems. Dependable support. Better business days.</p></div>
+</div></footer>
+
+<dialog id="pmodal" aria-labelledby="pm-t"></dialog>
+<dialog id="cart" aria-labelledby="cart-t"><div class="row" style="justify-content:space-between"><h2 id="cart-t" style="font-size:1.5rem">Your cart</h2><button class="icon-btn" data-close>Close</button></div>
+  <div id="cartItems"></div><p><strong>Subtotal: <span id="subtotal">₦0</span></strong></p>
+  <button class="btn" id="checkout">Checkout</button><div class="status" id="cstatus" role="status"></div></dialog>
+
+<script>
+/* ===== CONFIG: connect real services here. Never put secret keys in this file. ===== */
+const CONFIG={
+  email:'annabelladiamond8@gmail.com', whatsapp:'2349116700644',
+  inquiryEndpoint:'',   // e.g. 'https://your-backend.com/api/inquiries' (POST JSON). Empty = email fallback.
+  newsletterEndpoint:'',// e.g. your backend route that calls Mailchimp/Brevo with a server-side key.
+  checkoutEndpoint:''   // Your backend route that creates a Paystack/Flutterwave transaction and returns a payment URL.
+};
+/* ===== Editable content ===== */
+const STRENGTHS=['Executive and administrative support','Calendar and schedule management','Communication and correspondence','Organization and documentation','Customer service and client relations','Operational coordination','Time management and prioritization','Problem-solving and attention to detail','Confidentiality and discretion','Adaptability across industries'];
+const SERVICES=[
+ {id:'Executive Assistance',ic:'◷',items:['Calendar and schedule management','Meeting coordination and appointments','Travel research, itineraries, logistics','Email and correspondence management','Agendas, preparation, follow-up reminders','Confidential administrative support','Task tracking and deadlines']},
+ {id:'Virtual Assistance',ic:'✉',items:['Remote administrative support','Inbox organization','Online research','Data entry and database upkeep','Document formatting and file organization','Appointment booking','Follow-ups and task coordination']},
+ {id:'Administrative Management',ic:'▤',items:['Record keeping and document management','Administrative reports','Filing systems','Internal coordination','Spreadsheet and record updates','Recurring administrative processes']},
+ {id:'Operations Support',ic:'⚙',items:['Daily workflow coordination','Task tracking and follow-ups','SOP documentation','Process organization and improvement','Coordination between teams and providers','Routine operations support']},
+ {id:'Customer Service and Client Relations',ic:'☺',items:['Customer inquiries and communication','Client onboarding assistance','Appointment confirmations and follow-ups','Complaint documentation and escalation','Customer record management']},
+ {id:'Industry-Specific Support',ic:'◈',items:['Entertainment: scheduling, coordination, communication','Real estate: documents, appointments, records, client communication','Hospitality: customer service, operational coordination, workflow support']}];
+/* Sample products: edit names, descriptions, prices (naira), categories, and image (URL, or '' for a placeholder). */
+const PRODUCTS=[
+ {id:'p1',name:'Executive Assistant Weekly Planner',cat:'Planners',price:5000,image:'',desc:'A printable and digital weekly planner for schedules, priorities, and follow-ups.',includes:['Weekly spread','Priority tracker','Meeting notes page']},
+ {id:'p2',name:'Virtual Assistant Starter Kit',cat:'Starter kits',price:12000,image:'',desc:'Core templates for setting up a remote assistant practice.',includes:['Service menu template','Client intake form','Task log']},
+ {id:'p3',name:'Meeting Agenda and Minutes Templates',cat:'Templates',price:3500,image:'',desc:'Editable agenda and minutes formats for clear, repeatable meetings.',includes:['Agenda template','Minutes template','Action-item list']},
+ {id:'p4',name:'Client Onboarding Template Pack',cat:'Templates',price:6000,image:'',desc:'Welcome and intake documents that make onboarding smooth.',includes:['Welcome letter','Intake questionnaire','Checklist']},
+ {id:'p5',name:'Task Tracker Spreadsheet',cat:'Spreadsheets',price:4500,image:'',desc:'A workflow spreadsheet for tasks, owners, and deadlines.',includes:['Tracker sheet','Deadline view','Instructions']},
+ {id:'p6',name:'Business Organization Checklist Guide',cat:'Guides',price:2500,image:'',desc:'A short guide with checklists for organizing records and routines.',includes:['PDF guide','Printable checklists']}];
+
+/* ===== Helpers ===== */
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const naira=n=>'₦'+n.toLocaleString('en-NG');
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const waLink=t=>`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(t)}`;
+
+/* ===== Nav, active link, reveal, year, hero keywords ===== */
+function initNav(){
+  const menu=$('#menu'),b=$('#burger');
+  b.onclick=()=>b.setAttribute('aria-expanded',menu.classList.toggle('open'));
+  $$('a[href^="#"]',menu).forEach(a=>a.onclick=()=>{menu.classList.remove('open');b.setAttribute('aria-expanded','false')});
+  const links=$$('#menu a'),obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+  $$('main section').forEach(s=>obs.observe(s));
+}
+function initReveal(){
+  const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}}),{threshold:.12});
+  $$('.rv').forEach(el=>o.observe(el));
+}
+function initHeroWords(){
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  const w=['organize','manage','streamline','simplify'],k=$('#kw');let i=0;
+  setInterval(()=>{k.classList.add('out');setTimeout(()=>{i=(i+1)%w.length;k.textContent=w[i];k.classList.remove('out')},400)},2600);
+}
+
+/* ===== Services ===== */
+function renderServices(){
+  $('#serviceCards').innerHTML=SERVICES.map((s,i)=>`<article class="card rv"><div class="ic" aria-hidden="true">${s.ic}</div><h3>${esc(s.id)}</h3>
+   <ul>${s.items.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+   ${i===5?'<p class="note">Areas of experience, not certifications.</p>':''}
+   <button class="btn sm" data-service="${i}">Request This Service</button></article>`).join('');
+  $('#service').innerHTML='<option value="">Select a service</option>'+SERVICES.map(s=>`<option>${esc(s.id)}</option>`).join('')+'<option>Digital product question</option><option>Other</option>';
+  $('#strengths').innerHTML=STRENGTHS.map(s=>`<li>${esc(s)}</li>`).join('');
+  $$('[data-service]').forEach(b=>b.onclick=()=>{$('#service').value=SERVICES[b.dataset.service].id;$('#contact').scrollIntoView();$('#name').focus({preventScroll:true})});
+}
+
+/* ===== Products, modal, cart ===== */
+let cart=loadCart();
+function loadCart(){try{return JSON.parse(localStorage.getItem('annabel_cart'))||{}}catch{return{}}} /* only product ids + quantities are stored */
+function saveCart(){try{localStorage.setItem('annabel_cart',JSON.stringify(cart))}catch{}}
+const prod=id=>PRODUCTS.find(p=>p.id===id);
+function img(p){return p.image?`<img src="${esc(p.image)}" alt="${esc(p.name)} mockup" style="width:100%;height:150px;object-fit:cover;border-radius:10px;margin-bottom:14px">`:`<div class="pimg" role="img" aria-label="Image placeholder">${esc(p.name)}</div>`}
+function renderProducts(){
+  const q=$('#search').value.trim().toLowerCase(),c=$('#cat').value;
+  const list=PRODUCTS.filter(p=>(!c||p.cat===c)&&(!q||(p.name+p.desc).toLowerCase().includes(q)));
+  $('#productCards').innerHTML=list.length?list.map(p=>`<article class="card">${img(p)}<span class="tag">Sample product</span><h3>${esc(p.name)}</h3><p style="flex:1">${esc(p.desc)}</p>
+   <div class="price">${naira(p.price)}</div><div class="row" style="margin-top:12px"><button class="btn ghost sm" data-view="${p.id}">View Details</button><button class="btn sm" data-buy="${p.id}">Buy Now</button></div></article>`).join(''):'<p>No products match your search. Try a different word or category.</p>';
+  $$('[data-view]').forEach(b=>b.onclick=()=>openProduct(b.dataset.view));
+  $$('[data-buy]').forEach(b=>b.onclick=()=>{addToCart(b.dataset.buy);openCart()});
+}
+function initProducts(){
+  const cats=[...new Set(PRODUCTS.map(p=>p.cat))];
+  $('#cat').innerHTML='<option value="">All categories</option>'+cats.map(c=>`<option>${esc(c)}</option>`).join('');
+  $('#search').oninput=renderProducts;$('#cat').onchange=renderProducts;renderProducts();
+}
+function openProduct(id){
+  const p=prod(id),m=$('#pmodal');
+  m.innerHTML=`${img(p)}<h2 id="pm-t" style="font-size:1.5rem">${esc(p.name)}</h2><p>${esc(p.desc)}</p><h3 style="font-size:1rem">What’s included</h3><ul>${p.includes.map(i=>`<li>${esc(i)}</li>`).join('')}</ul>
+   <div class="price">${naira(p.price)}</div><div class="row" style="margin-top:14px"><button class="btn" id="pm-add">Add to cart</button><button class="btn ghost" data-close>Close</button></div>`;
+  $('#pm-add').onclick=()=>{addToCart(id);m.close();openCart()};m.showModal();
+}
+function addToCart(id){cart[id]=(cart[id]||0)+1;updateCart()}
+function updateCart(){
+  const ids=Object.keys(cart).filter(id=>prod(id));let sub=0,n=0;
+  $('#cartItems').innerHTML=ids.length?ids.map(id=>{const p=prod(id);sub+=p.price*cart[id];n+=cart[id];
+   return `<div class="ci"><div><strong>${esc(p.name)}</strong><br><span class="note">${naira(p.price)} each</span></div><div class="qty"><button data-q="${id}:-1" aria-label="Decrease quantity of ${esc(p.name)}">−</button><span>${cart[id]}</span><button data-q="${id}:1" aria-label="Increase quantity of ${esc(p.name)}">+</button></div><button class="link" data-rm="${id}">Remove</button></div>`}).join(''):'<p>Your cart is empty.</p>';
+  $('#subtotal').textContent=naira(sub);$('#count').textContent=n;$('#checkout').disabled=!ids.length;saveCart();
+  $$('[data-q]').forEach(b=>b.onclick=()=>{const[id,d]=b.dataset.q.split(':');cart[id]+=+d;if(cart[id]<1)delete cart[id];updateCart()});
+  $$('[data-rm]').forEach(b=>b.onclick=()=>{delete cart[b.dataset.rm];updateCart()});
+}
+function openCart(){$('#cstatus').className='status';$('#cart').showModal()}
+/* Checkout: payment must be created and VERIFIED on your server (Paystack/Flutterwave webhook), which then delivers the files. */
+async function checkout(){
+  const s=$('#cstatus'),items=Object.entries(cart).map(([id,quantity])=>({id,quantity}));
+  if(!CONFIG.checkoutEndpoint){
+    const lines=items.map(i=>`${prod(i.id).name} x${i.quantity}`).join('%0A');
+    s.className='status bad';
+    s.innerHTML=`Online payment is not connected yet, so no payment was taken. <a href="${waLink('Hello Annabel, I would like to order: ')}${lines}">Send this order request on WhatsApp</a>.`;return;
+  }
+  try{ /* The server must recompute prices from its own catalogue, never trust the browser's. */
+    const r=await fetch(CONFIG.checkoutEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({items})});
+    const d=await r.json();if(!r.ok||!d.paymentUrl)throw 0;location.href=d.paymentUrl;
+  }catch{s.className='status bad';s.textContent='Checkout could not start. Please try again or contact Annabel.'}
+}
+
+/* ===== Inquiry form ===== */
+function validate(){
+  let ok=true,first=null;
+  const rule=(id,test,msg)=>{const el=$('#'+id),e=el.closest('div').querySelector('.err')||el.closest('.full').querySelector('.err');
+    const bad=!test(el);el.setAttribute('aria-invalid',bad);e.textContent=bad?msg:'';if(bad){ok=false;first=first||el}};
+  rule('name',e=>e.value.trim(),'Enter your full name.');
+  rule('email',e=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.value.trim()),'Enter a valid email, like name@example.com.');
+  rule('phone',e=>e.value.replace(/\D/g,'').length>=7,'Enter a phone number with at least 7 digits.');
+  rule('service',e=>e.value,'Choose a service.');
+  rule('msg',e=>e.value.trim().length>=10,'Describe what you need (at least 10 characters).');
+  rule('consent',e=>e.checked,'Consent is needed so Annabel can reply to you.');
+  if(first)first.focus();return ok;
+}
+function inquiryData(){const f={};['name','email','phone','company','service','engagement','start','hours','budget','method','msg'].forEach(k=>f[k]=$('#'+k).value.trim());return f}
+let sending=false;
+$('#inquiry').addEventListener('submit',async e=>{
+  e.preventDefault();if(sending||!validate())return; /* fields keep their values when validation fails */
+  const d=inquiryData(),st=$('#status'),btn=$('#submitBtn');
+  if(!CONFIG.inquiryEndpoint){ /* fallback: opens a prefilled email; nothing is sent until the visitor sends it */
+    const body=Object.entries(d).map(([k,v])=>`${k}: ${v}`).join('\n');
+    location.href=`mailto:${CONFIG.email}?subject=${encodeURIComponent('Service inquiry: '+d.service)}&body=${encodeURIComponent(body)}`;
+    st.className='status ok';st.textContent='Your email app should open with your inquiry filled in. Press send there to deliver it.';return;
+  }
+  sending=true;btn.disabled=true;btn.textContent='Sending…';st.className='status';
+  try{const r=await fetch(CONFIG.inquiryEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+    if(!r.ok)throw 0;st.className='status ok';st.textContent='Thank you. Your inquiry was received and Annabel will respond soon.';e.target.reset();
+  }catch{st.className='status bad';st.textContent='Your inquiry could not be sent. Please try again, or email annabelladiamond8@gmail.com.'}
+  finally{sending=false;btn.disabled=false;btn.textContent='Submit Inquiry'}
+});
+
+/* ===== Newsletter ===== */
+$('#news').addEventListener('submit',async e=>{
+  e.preventDefault();const s=$('#nstatus'),v=$('#nemail').value.trim();
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){s.textContent='Enter a valid email address.';return}
+  if(!CONFIG.newsletterEndpoint){s.textContent='Newsletter sign-up is not connected yet, so nothing was saved.';return}
+  try{const r=await fetch(CONFIG.newsletterEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:v})});
+    if(!r.ok)throw 0;s.textContent='Thanks, you’re subscribed.';e.target.reset()}catch{s.textContent='Subscription failed. Please try again.'}
+});
+
+/* ===== Init ===== */
+document.addEventListener('click',e=>{
+  if(e.target.matches('[data-close]'))e.target.closest('dialog').close();
+  if(e.target.tagName==='DIALOG')e.target.close();
+  const n=e.target.dataset.note;if(n){e.preventDefault();alert(n)}
+});
+$('#cartBtn').onclick=openCart;$('#checkout').onclick=checkout;
+const hello='Hello Annabel, I found your website and would like to discuss some support.';
+$('#wa').href=$('#wa2').href=waLink(hello);
+$('#yr').textContent=new Date().getFullYear();
+renderServices();initProducts();updateCart();initNav();initReveal();initHeroWords();
+</script>
+</body>
+</html>
